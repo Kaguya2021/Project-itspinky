@@ -1,8 +1,3 @@
-python
-"""Точка входа Telegram-бота TSPINKY GIFT (поддержка polling + HTTP healthcheck для Render Web Service)."""
-
-from __future__ import annotations
-
 import asyncio
 import logging
 import os
@@ -30,8 +25,6 @@ def configure_logging(level_name: str) -> None:
 
 
 async def start_healthcheck_server(port: int) -> web.AppRunner:
-    """Запускает лёгкий HTTP-сервер на порту Render Web Service для прохождения healthcheck."""
-
     async def handle_health(_request: web.Request) -> web.Response:
         return web.Response(text="TSPINKY GIFT Bot is running", status=200)
 
@@ -75,7 +68,6 @@ async def main() -> None:
     )
     dp = Dispatcher(storage=MemoryStorage())
 
-    # Внедрение зависимостей во все хендлеры
     dp["config"] = config
     dp["db"] = db
     dp["subscription_checker"] = subscription_checker
