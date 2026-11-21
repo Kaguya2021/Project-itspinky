@@ -1,4 +1,4 @@
-```python
+python
 """Точка входа Telegram-бота TSPINKY GIFT (поддержка polling + HTTP healthcheck для Render Web Service)."""
 
 from __future__ import annotations
@@ -109,4 +109,3 @@ if __name__ == "__main__":
         asyncio.run(main())
     except (KeyboardInterrupt, SystemExit):
         pass
-```
